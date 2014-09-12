@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Interop", "Mono.Interop\Mono.Interop.csproj", "{3202B04C-8B66-4BB0-BC93-55A9B0EC0D1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteropRunFaker", "InteropRunFaker\InteropRunFaker.csproj", "{5E80CCAA-2EC7-49A8-A189-38879B6E1458}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,12 +13,8 @@ Global
 		{3202B04C-8B66-4BB0-BC93-55A9B0EC0D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3202B04C-8B66-4BB0-BC93-55A9B0EC0D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3202B04C-8B66-4BB0-BC93-55A9B0EC0D1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E80CCAA-2EC7-49A8-A189-38879B6E1458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E80CCAA-2EC7-49A8-A189-38879B6E1458}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E80CCAA-2EC7-49A8-A189-38879B6E1458}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E80CCAA-2EC7-49A8-A189-38879B6E1458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = InteropRunFaker\InteropRunFaker.csproj
+		StartupItem = Mono.Interop\Mono.Interop.csproj
 	EndGlobalSection
 EndGlobal

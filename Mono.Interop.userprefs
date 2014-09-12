@@ -1,12 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mono.Interop/MonoHost.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mono.Interop/Base.cs">
     <Files>
-      <File FileName="Mono.Interop/MonoHost.cs" Line="5" Column="5" />
-      <File FileName="Mono.Interop/Base.cs" Line="1" Column="1" />
-      <File FileName="Mono.Interop/Module.cs" Line="1" Column="1" />
+      <File FileName="Mono.Interop/MonoHost.cs" Line="16" Column="16" />
       <File FileName="Mono.Interop/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="InteropRunFaker/Program.cs" Line="1" Column="1" />
+      <File FileName="Mono.Interop/Base.cs" Line="83" Column="83" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

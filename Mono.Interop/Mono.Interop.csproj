@@ -7,6 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Mono.Interop</RootNamespace>
     <AssemblyName>Mono.Interop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
