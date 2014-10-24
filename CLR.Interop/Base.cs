@@ -1,12 +1,14 @@
 ﻿#define LOG_METHOD_NAMES 
 
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Mono.Interop
+namespace CLR.Interop
 {
+
 	public enum LogLevel
 	{
 		/**
@@ -47,10 +49,14 @@ namespace Mono.Interop
 	sealed partial class Base
 	{
 
+		internal const int ALIGN = 0;
+		internal const CallingConvention OBS_CALL = CallingConvention.Cdecl;
+		internal const CallingConvention OBS_CALLBACK = CallingConvention.Cdecl;
+
 		public static void Log(LogLevel logLevel, string format, 
 			params object[] args)
 		{
-			blog(logLevel, String.Format(format, args));
+			blog(logLevel, String.Format("CLR: " + format, args));
 		}
 
 		public static void LogError(string format, params object[] args)
@@ -71,6 +77,37 @@ namespace Mono.Interop
 		public static void LogInfo(string format, params object[] args)
 		{
 			Log(LogLevel.LOG_INFO, format, args);
+		}
+	}
+
+	internal abstract unsafe class OBSStruct<C, S>
+	{
+		private static Dictionary<IntPtr, C> _roots = new Dictionary<IntPtr, C>();
+		private S* _self;
+
+		protected object SyncRoot { get { return this; } }
+
+		internal static C FromNativeOrNull(S* ptr)
+		{
+			C value = null;
+			bool found;
+			lock (_roots) {
+				found = _roots.TryGetValue((IntPtr)ptr, out value);
+			}
+			return found ? value : null;
+		}
+
+		internal static C FromNative(S* ptr)
+		{
+			var value = FromNativeOrNull(ptr);
+			if (value == null)
+				throw new ArgumentException("object not found");
+			return value;
+		}
+
+		internal S* ToNative()
+		{
+			return _self;
 		}
 	}
 }

@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3202B04C-8B66-4BB0-BC93-55A9B0EC0D1F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Mono.Interop</RootNamespace>
-    <AssemblyName>Mono.Interop</AssemblyName>
+    <RootNamespace>CLR.Interop</RootNamespace>
+    <AssemblyName>CLR.Interop</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -18,6 +18,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -26,6 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -33,9 +35,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Module.cs" />
-    <Compile Include="MonoHost.cs" />
     <Compile Include="Base.cs" />
+    <Compile Include="Source.cs" />
+    <Compile Include="CLRHost.cs" />
+    <Compile Include="IModule.cs" />
+    <Compile Include="ImageSource.cs" />
+    <Compile Include="GS\Effect.cs" />
+    <Compile Include="Properties.cs" />
+    <Compile Include="Data.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="GS\" />
+  </ItemGroup>
 </Project>
